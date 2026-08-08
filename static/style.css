@@ -1,0 +1,265 @@
+:root {
+    --bg: #0f1621;
+    --panel: #141c2f;
+    --panel-soft: #1d2638;
+    --text: #e7eef7;
+    --muted: #9bb0cf;
+    --green: #65d18a;
+    --yellow: #f2c94c;
+    --orange: #fda94f;
+    --red: #f56a6a;
+    --blue: #4b8bff;
+    --border: rgba(255, 255, 255, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text);
+    background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.1), transparent 25%),
+        linear-gradient(180deg, #0a111b 0%, #121a27 100%);
+}
+
+.page-container {
+    width: min(1200px, 100% - 32px);
+    margin: 24px auto;
+    display: grid;
+    gap: 24px;
+}
+
+.hero-card,
+.dashboard-card,
+.summary-card {
+    background: rgba(15, 22, 33, 0.95);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+}
+
+.hero-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+.logo {
+    width: 56px;
+    height: 56px;
+    display: grid;
+    place-items: center;
+    font-size: 28px;
+    border-radius: 18px;
+    background: rgba(75, 139, 255, 0.15);
+}
+
+.hero-card h1 {
+    margin: 0;
+    font-size: clamp(1.9rem, 2.2vw, 2.7rem);
+}
+
+.hero-card p {
+    margin: 6px 0 0;
+    color: var(--muted);
+    max-width: 740px;
+    line-height: 1.6;
+}
+
+.input-group {
+    display: grid;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.input-group label {
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+#url-input {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text);
+    font-size: 1rem;
+}
+
+#url-input:focus {
+    outline: none;
+    border-color: rgba(75, 139, 255, 0.65);
+    box-shadow: 0 0 0 4px rgba(75, 139, 255, 0.12);
+}
+
+.primary-button {
+    margin-top: 18px;
+    padding: 14px 24px;
+    background: linear-gradient(135deg, #4b8bff, #1f70ff);
+    color: white;
+    border: none;
+    border-radius: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primary-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 16px 40px rgba(28, 107, 255, 0.25);
+}
+
+.status-message {
+    margin-top: 16px;
+    color: var(--muted);
+    min-height: 1.5rem;
+    line-height: 1.5;
+}
+
+.ethics-note {
+    margin-top: 20px;
+    color: var(--muted);
+    background: rgba(255,255,255,0.03);
+    padding: 16px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.06);
+}
+
+.results-section {
+    display: grid;
+    gap: 24px;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.summary-card h2,
+.dashboard-card h3 {
+    margin-top: 0;
+    margin-bottom: 14px;
+    color: white;
+}
+
+.summary-card {
+    text-align: center;
+}
+
+.score-value {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.risk-category {
+    margin-top: 8px;
+    font-size: 1rem;
+    color: var(--green);
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 18px;
+}
+
+.hidden {
+    display: none;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.cookie-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 720px;
+}
+
+.cookie-table th,
+.cookie-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.cookie-table th {
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.cookie-table tbody tr:hover {
+    background: rgba(255,255,255,0.04);
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.status-badge.green { background: rgba(101, 209, 138, 0.16); color: var(--green); }
+.status-badge.yellow { background: rgba(242, 201, 76, 0.15); color: var(--yellow); }
+.status-badge.red { background: rgba(245, 106, 106, 0.15); color: var(--red); }
+
+.issue-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 14px;
+}
+
+.issue-card h4 {
+    margin: 0 0 10px;
+    font-size: 1rem;
+}
+
+.issue-card p {
+    margin: 6px 0;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.issue-card strong {
+    color: var(--text);
+}
+
+@media (max-width: 980px) {
+    .summary-grid,
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 720px) {
+    .hero-card,
+    .dashboard-card,
+    .summary-card {
+        padding: 18px;
+    }
+
+    #url-input,
+    .primary-button {
+        font-size: 0.95rem;
+    }
+
+    .cookie-table {
+        min-width: 600px;
+    }
+}
